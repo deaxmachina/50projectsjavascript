@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #100F1A;
+}
+
+.container {
+  display: flex;
+  width: 90vw; 
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  flex: 0.5; /* this makes all the panels take up equal space */
+  transition: flex 0.7s ease-in /* whenever the flex property changes this animation triggers*/
+}
+
+.panel p {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+/* if the panel also has a class active, expland the flex to 5 */
+.panel.active {
+  flex: 5; 
+}
+/* and show the text just for that panel */
+.panel.active p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media(max-width: 480px) {
+  .container {
+    width: 100vw; 
+  }
+  /* remove the last 2 panels */
+  .panel:nth-of-type(4), .panel:nth-of-type(5) {
+    display: none; 
+  }
+}
