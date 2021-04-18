@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --line-border-fill: hotpink; 
+  --line-border-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+/* create the progress container line */
+.progress-container::before {
+  content: ''; /* this is needed when you use ::before or ::after */
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* this is so that it's in the middle */
+  left: 0;
+  height: 4px;
+  width: 100%; /* take up the whole space */
+  z-index: -1;
+}
+
+/* create the progress line */
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* this is so that it's in the middle */
+  left: 0;
+  height: 4px;
+  width: 0%; /* start at 0 */
+  z-index: -1;
+  transition: .4s ease;
+}
+
+/* circles */
+.circle {
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex; /* to put the numbers in the middle of circle */
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: .4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+/* buttons */
+.btn {
+  background-color: var(--line-border-fill);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+  outline: none;
+}
+/* style at the moment when we click the button until letting go */
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus {
+  outline: none; 
+}
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
