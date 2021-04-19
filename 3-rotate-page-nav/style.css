@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #222;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left; /* default origin for transform is center so we need to change manually */
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+/* rotate the container by 20 deg when show-nav class is added */
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+/* move the circle container up and left by 50% of the width of the circle */
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+/* style the circle when the container has show-nav applied to it */
+/* by rotating it we get to see the close button because of how we positoned it - 
+it basically comes into view when the rotation takes place 
+*/
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+
+/* buttons inside the circle in the lop left corner */
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* navigation */
+.container.show-nav + nav li{
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+nav ul {
+  list-style-type: none; /* no bullet points */
+  padding-left: 30px;
+}
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%); /* initial left positon is to the left off the screen and it will come into the screen on transition */
+  transition: transform 0.4s ease-in;
+}
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+/* the li's after the initial li are gonna stick out 15px */
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%); 
+}
+/* and the one after  */
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%); 
+}
+
+/* content container */
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+.content small {
+  color: #555;
+  font-style: italic;
+}
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* image */
+.content img {
+  max-width: 100%; /* of its parent */
+}
+
