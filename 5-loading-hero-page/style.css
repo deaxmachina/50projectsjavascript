@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Zen Dots', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  background: url("https://images.unsplash.com/photo-1614519679749-3189ec5687d9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80") no-repeat center center/cover;
+  position: absolute;
+  top: -30px; /* this is to remove the blur from the edges */
+  left: -30px; /* this is to remove the blur from the edges */
+  width: calc(100vw + 60px); 
+  height: calc(100vh + 60px);
+  z-index: -1; /* so that text is in front */
+  filter: blur(0px);
+}
+
+.loading-text {
+  font-size: 100px;
+  color: white;
+}
+
+.image-credit {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(2, 156, 105);
+}
