@@ -1,14 +1,13 @@
 const loadText = document.querySelector(".loading-text");
 const background = document.querySelector(".bg");
 
-let load = 0;
 
 // interval where the first argument is the function that will run 
 // and the second argument is how often it will fun in milliseconds
 // note that if we just leave it like this it will run forever 
 let int = setInterval(blurring, 30)
 
-
+let load = 0;
 function blurring() {
   load++;
   // stop the interval when the load value is above 99 
