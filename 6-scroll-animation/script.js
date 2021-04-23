@@ -11,7 +11,10 @@ function checkBoxes() {
 
   boxes.forEach(box => {
     // get the top of each box 
-    const boxTop = box.getBoundingClientRect().top // this method allow to get various info about a dom's position relative to the viewport
+    // the getBoundingClientRect method allow to get various info about a dom's position relative to the viewport
+    // as the viewport moves when we scroll, this position changes, e.g. at the start the content that's below the viewport 
+    // will have high values, and as we scroll through this content, is will start having negative value 
+    const boxTop = box.getBoundingClientRect().top 
     // see if the top of the box is less than the trigger bottom 
     // if it is we want to add the class show; otherwise if it is more,
     // we want to remove the class of show
