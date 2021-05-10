@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end; /* push the single element in the flexbox we have to the end */
+  z-index: 10;
+  background-color: var(--secondary-color);
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  color: #f1f1f1;
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+main {
+  display: flex; 
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  position: relative;
+  overflow: hidden; 
+  border-radius: 10px;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: #f1f1f1;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: .5px;
+}
+
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: .25rem .5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: lightseagreen;
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: maroon;
+}
+
+.overview {
+  background-color: #f1f1f1;
+  padding: 2rem;
+  position: absolute; /* basically position it on top of the parent and its content */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%); /* this pushes it off-screen as its below the height of its parent container */
+  transition: transform 0.3s ease-in;
+}
+
+/* when we hover a movie we want the overview to come into view */
+.movie:hover .overview {
+  transform: translateY(0);
+}
