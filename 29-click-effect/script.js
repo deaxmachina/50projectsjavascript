@@ -44,4 +44,10 @@ function createHeart(e) {
   loveMe.appendChild(heart)
 
   times.innerHTML = ++timesClicked
+
+  // to remove the heart after some time so that they don't 
+  // stay in the DOM
+  setTimeout(() => {
+    heart.remove()
+  }, 1000)
 }
