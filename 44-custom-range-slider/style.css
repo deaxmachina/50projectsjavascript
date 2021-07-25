@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(0deg, white, salmon);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  position: absolute;
+  top: 10px;
+  color: #fff;
+}
+
+.range-container {
+  position: relative;
+}
+
+input[type='range'] {
+  width: 300px;
+  margin: 18px 0;
+  -webkit-appearance: none;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range'] + label {
+  background-color: #fff;
+  position: absolute;
+  top: -25px;
+  left: 110px;
+  width: 80px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* for chrome and safari - for the track */
+input[type='range']::-webkit-slider-runnable-track {
+  background: darksalmon;
+  border-radius: 0px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+
+/* for chrome and safari - for the movable circle */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none; /* remove the default */
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid darksalmon;
+  margin-top: -7px;
+}
+
+/* for firefox - for the track */
+input[type='range']::-moz-range-track {
+  background: darksalmon;
+  border-radius: 0px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+
+/* for firefox - for the movable circle */
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none; /* remove the default */
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid darksalmon;
+  margin-top: -7px;
+}
+
+/* for IE - for the track */
+input[type='range']::-ms-track {
+  background: darksalmon;
+  border-radius: 0px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+
+/* for IE - for the movable circle */
+input[type='range']::-ms-thumb {
+  -webkit-appearance: none; /* remove the default */
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid darksalmon;
+  margin-top: -7px;
+}
+
