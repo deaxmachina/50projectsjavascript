@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Catch The Insect</title>
+</head>
+<body>
+  <div class="screen">
+    <h1>Catch the insect</h1>
+    <button class="btn" id="start-btn">Play Game</button>
+  </div>
+
+  <div class="screen">
+    <h1>What is your "favourite" insect</h1>
+    <ul class="insects-list">
+      <li>
+        <button class="choose-insect-btn">
+          <p>Cat</p>
+          <img alt='cat1' src="https://pngimg.com/uploads/cat/cat_PNG1630.png">
+        </button>
+      </li>
+      <li>
+        <button class="choose-insect-btn">
+          <p>Cat</p>
+          <img alt='cat2' src="https://pngimg.com/uploads/cat/cat_PNG112.png">
+        </button>
+      </li>
+      <li>
+        <button class="choose-insect-btn">
+          <p>Cat</p>
+          <img alt='cat3' src="http://pngimg.com/uploads/cat/cat_PNG1619.png">
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="screen game-container" id="game-container">
+    <h3 id="time">Time: 00:00</h3>
+    <h3 id="score">Score: 0</h3>
+    <h5 id="message" class="message">
+      Are you annoyed yet nya?
+      <br>
+      You are playing an impossible game.
+    </h5> 
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
